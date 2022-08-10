@@ -10,11 +10,9 @@ const Editor = () => {
     extensions: [
       StarterKit,
       Placeholder.configure({
-        placeholder: `Start typing...`,
+        placeholder: `Nothing is saved. Everything is destroyed once you refresh or close the tab. So make sure to copy your work once you are done. Start writing...`,
       }),
     ],
-    content: `<p>Nothing is saved. Everything is destroyed once you refresh or close the tab. So make sure to copy your work once you are done.
-    <br><br>Start Typing...</p>`,
   });
 
   return <EditorContent editor={editor} />;
