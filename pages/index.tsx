@@ -13,6 +13,7 @@ const Editor = () => {
         placeholder: `Start typing...`,
       }),
     ],
+    content: `<p>Start typing...</p>`,
   });
 
   return <EditorContent editor={editor} />;
