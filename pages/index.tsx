@@ -13,7 +13,8 @@ const Editor = () => {
         placeholder: `Start typing...`,
       }),
     ],
-    content: `<p>Nothing is saved. Everything is destroyed once you refresh or close the tab. So make sure to copy your work once you are done.</p>`,
+    content: `<p>Nothing is saved. Everything is destroyed once you refresh or close the tab. So make sure to copy your work once you are done.
+    <br><br>Start Typing...</p>`,
   });
 
   return <EditorContent editor={editor} />;
