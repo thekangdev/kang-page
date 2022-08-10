@@ -1,12 +1,18 @@
 import type { NextPage } from "next";
+
+import Placeholder from "@tiptap/extension-placeholder";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "next/image";
 
 const Editor = () => {
   const editor = useEditor({
-    extensions: [StarterKit],
-    content: `<p>Start Writing...</p>`,
+    extensions: [
+      StarterKit,
+      Placeholder.configure({
+        placeholder: `Start typing...`,
+      }),
+    ],
   });
 
   return <EditorContent editor={editor} />;
