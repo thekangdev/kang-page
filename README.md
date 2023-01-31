@@ -12,8 +12,8 @@ PS: there is a dark mode, for the night creatures.
 [Start your cycle of writing and destroying](https://thekang.co)
 
 
-
-Kang is a hop of faith. It is an uncompromising way of doing things that needs to be done.
+What is The Kang Company?
+It is a hop of faith into a void filled with our mind's nonsense. It is an uncompromising way of doing things that needs to be done.
 We are a bunch constantly creating (&destroying) things we make, taking decisions that would churn the stomach of business gurus
 Why?
 Because we can.
