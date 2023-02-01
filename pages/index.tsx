@@ -5,8 +5,10 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "next/image";
 import useDarkMode from "../utils/hooks/useDarkMode";
+import React from "react";
 
 const Editor = () => {
+
   const editor = useEditor({
     editorProps: {
       attributes: {
@@ -15,10 +17,17 @@ const Editor = () => {
     },
     extensions: [
       StarterKit,
-      Placeholder.configure({
-        placeholder: `Nothing is saved. Everything is destroyed once you refresh or close the tab. So make sure to copy your work once you are done. Start writing...`,
-      }),
+      // Placeholder.configure({
+      //   placeholder: `Nothing is saved. Everything is destroyed once you refresh or close the tab. So make sure to copy your work once you are done. Start writing...`,
+      // }),
     ],
+
+    content: typeof window !== 'undefined' ? `${localStorage.getItem("content")}` : '',
+
+    onUpdate: ({ editor }) => {
+      const html = editor.getHTML()
+      localStorage.setItem("content", html)
+    },
   });
 
   return <EditorContent editor={editor} />;
