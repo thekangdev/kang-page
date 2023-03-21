@@ -21,9 +21,9 @@ const Editor = () => {
       // }),
     ],
 
-    content: typeof window !== 'undefined' ?
-      `${localStorage.getItem("content")}` === 'null'
-        ? 'Remove this line to write your content here...' : `${localStorage.getItem("content")}` : 'REmove this line to write your content here...',
+    content: typeof window !== 'undefined' &&
+      `${localStorage.getItem("content")}` !== 'null'
+      ? `${localStorage.getItem("content")}` : 'Remove this line to write your content here...',
 
     onUpdate: ({ editor }) => {
       const html = editor.getHTML()
