@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Placeholder from "@tiptap/extension-placeholder";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
@@ -22,7 +21,9 @@ const Editor = () => {
       // }),
     ],
 
-    content: typeof window !== 'undefined' ? `${localStorage.getItem("content")}` : '',
+    content: typeof window !== 'undefined' ?
+      `${localStorage.getItem("content")}` === 'null'
+        ? 'write something' : `${localStorage.getItem("content")}` : 'write something',
 
     onUpdate: ({ editor }) => {
       const html = editor.getHTML()
