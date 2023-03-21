@@ -23,7 +23,7 @@ const Editor = () => {
 
     content: typeof window !== 'undefined' ?
       `${localStorage.getItem("content")}` === 'null'
-        ? 'write something' : `${localStorage.getItem("content")}` : 'write something',
+        ? 'Remove this line to write your content here...' : `${localStorage.getItem("content")}` : 'REmove this line to write your content here...',
 
     onUpdate: ({ editor }) => {
       const html = editor.getHTML()
