@@ -47,7 +47,7 @@ const Home: NextPage = () => {
             className="control-btn p-2"
             onClick={() => setTheme(colorTheme)}
           >
-            {colorTheme === "dark" ? "go dark" : "light it up"}
+            {colorTheme === "dark" ? "Dark" : "Light"}
           </button>
         </div>
       </div>
