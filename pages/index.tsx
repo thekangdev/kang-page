@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Placeholder from "@tiptap/extension-placeholder";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "next/image";
 import useDarkMode from "../utils/hooks/useDarkMode";
+import React from "react";
 
 const Editor = () => {
+
   const editor = useEditor({
     editorProps: {
       attributes: {
@@ -15,10 +16,19 @@ const Editor = () => {
     },
     extensions: [
       StarterKit,
-      Placeholder.configure({
-        placeholder: `Nothing is saved. Everything is destroyed once you refresh or close the tab. So make sure to copy your work once you are done. Start writing...`,
-      }),
+      // Placeholder.configure({
+      //   placeholder: `Nothing is saved. Everything is destroyed once you refresh or close the tab. So make sure to copy your work once you are done. Start writing...`,
+      // }),
     ],
+
+    content: typeof window !== 'undefined' &&
+      `${localStorage.getItem("content")}` !== 'null'
+      ? `${localStorage.getItem("content")}` : 'Remove this line to write your content here...',
+
+    onUpdate: ({ editor }) => {
+      const html = editor.getHTML()
+      localStorage.setItem("content", html)
+    },
   });
 
   return <EditorContent editor={editor} />;
@@ -37,7 +47,7 @@ const Home: NextPage = () => {
             className="control-btn p-2"
             onClick={() => setTheme(colorTheme)}
           >
-            {colorTheme === "dark" ? "go dark" : "light it up"}
+            {colorTheme === "dark" ? "Dark" : "Light"}
           </button>
         </div>
       </div>
